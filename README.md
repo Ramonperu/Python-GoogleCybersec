@@ -648,8 +648,6 @@ Ocurren mientras el programa está en ejecución. A diferencia de los errores de
 
   **Solución**: Asegurarse de que todas las variables estén definidas antes de ser usadas.
 
-  
-
 - **`TypeError`**: Ocurre cuando se intenta operar con tipos de datos incompatibles.
 
   ```python
