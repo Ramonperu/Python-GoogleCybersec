@@ -643,10 +643,12 @@ Ocurren mientras el programa está en ejecución. A diferencia de los errores de
 - **`NameError`**: Se produce cuando se intenta usar una variable que no ha sido definida.
 
   ```python
-print(variable_no_definida)
+  print(variable_no_definida)
   ```
-  
+
   **Solución**: Asegurarse de que todas las variables estén definidas antes de ser usadas.
+
+  
 
 - **`TypeError`**: Ocurre cuando se intenta operar con tipos de datos incompatibles.
 
