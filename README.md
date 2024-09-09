@@ -29,8 +29,6 @@ Python es un lenguaje de programación de alto nivel, interpretado y de propósi
 
 - Funciona en sistemas operativos como Windows, Linux y macOS, lo que lo hace versátil en entornos variados.
 
-
-
 ## Asignación de variables
 
 En Python, las variables se utilizan para almacenar datos, y no requieren una declaración explícita de su tipo, ya que Python lo asigna automáticamente según el valor que le des. En ciberseguridad, las variables nos permiten guardar y manipular información clave como direcciones IP, credenciales, tiempos de respuesta, entre otros. Mas adelante se verán ejemplos de como declarar distintos tipos de datos como variables
@@ -58,8 +56,6 @@ Es importante seguir buenas prácticas al nombrar variables para que el código 
 
 - No pueden comenzar con números.
 - No deben incluir espacios ni caracteres especiales (excepto guiones bajos)
-
-
 
 ## Tipos de datos
 
@@ -89,12 +85,6 @@ Las cadenas almacenan texto. Son esenciales para manejar direcciones IP, nombres
 ```python
 direccion_ip = "192.168.1.1"  # Dirección IP de un cliente
 usuario = "admin"  # Nombre de usuario detectado
-```
-
-##### Metodo de slicing
-
-```python
-cadena = "ciberseguridad" subcadena = cadena[2:5]  # Recuerda que el índice del string empieza en 0 y el ultimo indice(5) no se imprime  # Imprime: 'ber'
 ```
 
 #### **Booleanos (`bool`)**:
@@ -131,7 +121,207 @@ Las tuplas son similares a las listas, pero sus elementos son inmutables (no se 
 configuracion_inicial = ("admin", "12345", "192.168.1.1")  # Configuración inicial de usuario, pass e Ip
 ```
 
+## Trabajando con strings y listas
 
+En Python, tanto las **strings** como las **listas** son tipos de datos secuenciales, lo que significa que almacenan colecciones de elementos ordenados. Aunque comparten algunas similitudes, también tienen diferencias clave en cómo se manipulan y las operaciones que se pueden realizar con ellas.
+
+### **Strings en Python**
+
+Las **strings** (cadenas de texto) en Python son **inmutables**, lo que significa que una vez que se crean, no pueden ser modificadas directamente. Puedes acceder a sus caracteres mediante **índices** y manipularlas con operaciones que crean nuevas cadenas.
+
+#### Reglas y Operaciones con Strings:
+
+- ***Inmutabilidad**: No se pueden modificar las cadenas existentes, pero se pueden crear nuevas combinando o manipulando cadenas existentes.*
+
+- Concatenación: Se pueden unir dos o más cadenas usando el operador `+`.
+
+  ```python
+  cadena1 = "ciber"
+  cadena2 = "seguridad"
+  nueva_cadena = cadena1 + cadena2  # Resultado: "ciberseguridad"
+  ```
+
+- Repetición: Se puede repetir una cadena usando el operador `*`
+
+  ```python
+  cadena = "Hola" * 3  # Resultado: "HolaHolaHola"
+  ```
+
+- Longitud: Para obtener la longitud de una cadena, se usa la función `len()`
+
+  ```python
+  cadena = "ciberseguridad"
+  print(len(cadena))  # Resultado: 14
+  ```
+
+#### Accediendo a Caracteres e Índices:
+
+- **Índices**: Los índices en una cadena comienzan en `0` y permiten acceder a caracteres individuales.
+
+  ```python
+  cadena = "ciberseguridad"
+  print(cadena[0])  # Resultado: "c"
+  print(cadena[-1])  # Resultado: "d" (último carácter)
+  ```
+
+- **Slices **: Usando la notación `cadena[inicio:fin]`, puedes extraer una subcadena. El índice **`inicio` es inclusivo** y el **índice `fin` es exclusivo**.
+
+  ```python
+  cadena = "ciberseguridad"
+  subcadena = cadena[0:5]  # Resultado: "ciber"
+  ```
+
+  - Omitir inicio: Si no especificas el inicio, se toma desde el principio.
+
+    ```python
+    subcadena = cadena[:5]  # Resultado: "ciber"
+    ```
+
+  - Omitir fin: Si no especificas el fin, se toma hasta el final.
+
+    ```python
+    subcadena = cadena[5:]  # Resultado: "seguridad"
+    ```
+
+  - Índices negativos: Puedes usar índices negativos para contar desde el final.
+
+    ```python
+    subcadena = cadena[-9:]  # Resultado: "seguridad"
+    ```
+
+#### Métodos útiles para Strings:
+
+Mas adelante explicamos lo que son los métodos en otro apartado.
+
+- `upper()` y `lower()`: Convertir una cadena a mayúsculas o minúsculas.
+
+  ```python
+  cadena = "ciberseguridad"
+  print(cadena.upper())  # Resultado: "CIBERSEGURIDAD"
+  ```
+
+- `strip()`: Elimina los espacios en blanco al principio y al final de la cadena.
+
+  ```python
+  cadena = "  ciberseguridad  "
+  print(cadena.strip())  # Resultado: "ciberseguridad"
+  ```
+
+- `split()`: Divide una cadena en una lista basada en un separador.
+
+  ```python
+  cadena = "usuario:contraseña:email"
+  partes = cadena.split(":")  # Resultado: ['usuario', 'contraseña', 'email']
+  ```
+
+
+
+### **Trabajando con Listas en Python**
+
+Las **listas** en Python son **mutables**, lo que significa que puedes modificar sus elementos una vez creadas. Pueden contener diferentes tipos de datos (números, strings, otras listas, etc.) y permiten almacenar colecciones de elementos ordenados.
+
+#### Reglas y Operaciones con Listas:
+
+- ***Mutabilidad**: Las listas se pueden modificar después de su creación, lo que permite agregar, eliminar o cambiar elementos.*
+
+- Concatenación: Se pueden combinar dos listas usando el operador `+`
+
+  ```python
+  lista1 = [1, 2, 3]
+  lista2 = [4, 5, 6]
+  nueva_lista = lista1 + lista2  # Resultado: [1, 2, 3, 4, 5, 6]
+  ```
+
+- Repetición: Se puede repetir una lista usando el operador `*`
+
+  ```python
+  lista = [1, 2, 3] * 2  # Resultado: [1, 2, 3, 1, 2, 3]
+  ```
+
+- Longitud: Para obtener la longitud de una lista, se usa `len()`
+
+  ```python
+  lista = [1, 2, 3, 4]
+  print(len(lista))  # Resultado: 4
+  ```
+
+#### Accediendo a Elementos e Índices:
+
+- **Índices**: Los índices funcionan igual que en las cadenas, comenzando en `0` para el primer elemento.
+
+  ```python
+  lista = [10, 20, 30, 40]
+  print(lista[0])  # Resultado: 10
+  print(lista[-1])  # Resultado: 40 (último elemento)
+  ```
+
+- **Slices**: Puedes extraer sublistas de la misma manera que con las cadenas.
+
+  ```python
+  lista = [1, 2, 3, 4, 5]
+  sublista = lista[1:4]  # Resultado: [2, 3, 4]
+  ```
+
+#### Métodos útiles para Listas:
+
+Mas adelante explicamos lo que son los métodos en otro apartado
+
+- **`append()`**: Agrega un elemento al final de la lista.
+
+  ```python
+  lista = [1, 2, 3]
+  lista.append(4)  # Resultado: [1, 2, 3, 4]
+  ```
+
+- **`extend()`**: Agrega múltiples elementos de otra lista al final.
+
+  ```python
+  lista = [1, 2, 3]
+  lista.extend([4, 5, 6])  # Resultado: [1, 2, 3, 4, 5, 6]
+  ```
+
+- **`insert()`**: Inserta un elemento en un índice específico.
+
+  ```python
+  lista = [1, 2, 4]
+  lista.insert(2, 3)  # Resultado: [1, 2, 3, 4]
+  ```
+
+- **`remove()`**: Elimina la primera ocurrencia de un elemento en la lista.
+
+  ```python
+  lista = [1, 2, 3, 4]
+  lista.remove(3)  # Resultado: [1, 2, 4]
+  ```
+
+- **`pop()`**: Elimina y devuelve el último elemento o un elemento en un índice específico.
+
+  ```python
+  lista = [1, 2, 3]
+  lista.pop()  # Resultado: [1, 2] (Devuelve 3)
+  lista.pop(0)  # Resultado: [2] (Devuelve 1)
+  ```
+
+- **`sort()` y `sorted()`**: Ordenan la lista en orden ascendente.
+
+  ```python
+  lista = [3, 1, 2]
+  lista.sort()  # Resultado: [1, 2, 3]
+  ```
+
+  Si no quieres modificar la lista original, puedes usar `sorted()`, que devuelve una lista ordenada.
+
+  ```python
+  nueva_lista = sorted(lista)  # La lista original sigue igual
+  ```
+
+#### Otras Operaciones:
+
+- Comprensión de listas: Es una forma compacta de crear listas basadas en una expresión.
+
+  ```python
+  cuadrados = [x**2 for x in range(5)]  # Resultado: [0, 1, 4, 9, 16]
+  ```
 
 ## Condicionales e Iteraciones en Python
 
@@ -413,7 +603,7 @@ Para usar un módulo, simplemente lo importas usando la palabra clave **`import`
        print(paquete)
    ```
 
-Y podríamos continuar mencionando librerias especializadas en ciberseguridad como **`request`**, **`haslib`**, **`paramiko`**...etc
+Y podríamos continuar mencionando librerías especializadas en ciberseguridad como **`request`**, **`haslib`**, **`paramiko`**...etc
 
 ## Debugging
 
@@ -450,68 +640,56 @@ Ocurren mientras el programa está en ejecución. A diferencia de los errores de
 
 - **`NameError`**: Se produce cuando se intenta usar una variable que no ha sido definida.
 
-  **Ejemplo**:
-
   ```python
-  print(variable_no_definida)
+print(variable_no_definida)
   ```
-
+  
   **Solución**: Asegurarse de que todas las variables estén definidas antes de ser usadas.
 
 - **`TypeError`**: Ocurre cuando se intenta operar con tipos de datos incompatibles.
-
-  **Ejemplo**:
 
   ```python
   numero = 5
   cadena = "hola"
   print(numero + cadena)  # Error: No se puede sumar un número a una cadena
   ```
-
+  
   **Solución**: Convertir uno de los tipos para que la operación tenga sentido.
 
   ```python
   print(str(numero) + cadena)  # Conversión del número a string
   ```
-
+  
 - **`IndexError`**: Se produce cuando se intenta acceder a un índice que está fuera del rango de una lista o cadena.
 
-  **Ejemplo**:
-
   ```python
-  lista = [1, 2, 3]
+lista = [1, 2, 3]
   print(lista[5])  # Error: no hay índice 5 en la lista
   ```
-
+  
   **Solución**: Comprobar la longitud de la lista antes de acceder al índice.
 
 - **`KeyError`**: Ocurre cuando intentas acceder a una clave inexistente en un diccionario.
-
-  **Ejemplo**:
 
   ```python
   diccionario = {"clave1": "valor1"}
   print(diccionario["clave_no_existente"])
   ```
-
+  
   **Solución**: Usar el método `get()` para evitar el error, o verificar la existencia de la clave.
 
   ```python
   print(diccionario.get("clave_no_existente", "Clave no encontrada"))
   ```
-
+  
 - **`ZeroDivisionError`**: Ocurre cuando se intenta dividir un número entre cero.
 
-  **Ejemplo**:
-
   ```python
-  python
-  Copiar código
   resultado = 10 / 0
   ```
-
+  
   **Solución**: Verificar que el divisor no sea cero antes de realizar la operación.
-
+  
   ```python
   divisor = 0
   if divisor != 0:
@@ -523,8 +701,6 @@ Ocurren mientras el programa está en ejecución. A diferencia de los errores de
 ### **Errores Lógicos**
 
 Ocurren cuando el código se ejecuta correctamente, pero no produce el resultado esperado. Estos errores no generan mensajes de error, lo que hace que sean más difíciles de detectar.
-
-#### Ejemplo:
 
 Imagina que quieres verificar si un número es par, pero tu lógica es incorrecta:
 
