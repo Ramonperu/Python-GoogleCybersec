@@ -636,6 +636,8 @@ SyntaxError: invalid syntax
 
 Ocurren mientras el programa está en ejecución. A diferencia de los errores de sintaxis, el código puede ejecutarse parcialmente antes de que se produzca el error. Son lanzados como **excepciones** y pueden manejarse mediante bloques `try-except`.
 
+
+
 #### Tipos Comunes:
 
 - **`NameError`**: Se produce cuando se intenta usar una variable que no ha sido definida.
@@ -663,10 +665,10 @@ print(variable_no_definida)
 - **`IndexError`**: Se produce cuando se intenta acceder a un índice que está fuera del rango de una lista o cadena.
 
   ```python
-lista = [1, 2, 3]
+  lista = [1, 2, 3]
   print(lista[5])  # Error: no hay índice 5 en la lista
   ```
-  
+
   **Solución**: Comprobar la longitud de la lista antes de acceder al índice.
 
 - **`KeyError`**: Ocurre cuando intentas acceder a una clave inexistente en un diccionario.
